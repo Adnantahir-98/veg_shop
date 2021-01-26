@@ -40,8 +40,12 @@ return (
     <div classNameName="container">
         <center>
         <div classNameName="row">
-            <div className="col-md-4 p-5 rounded"  style={{background:"#eee"}}>
+            <div className="col-md-4 my-4 p-5 rounded"  style={{background:"#eee"}}>
                 <form onSubmit={this.handleSubmit}>
+                    <div>
+                        <h3 className="m-0"> Registration </h3> 
+                        <hr />
+                    </div>
                     <div className="form-group">
                         <label className="float-left" for="exampleInputEmail1">Email</label>
                         <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email" value={this.state.email} onChange={this.handleEmailChange} />

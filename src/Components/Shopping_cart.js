@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
+import { connect } from 'react-redux';
 
-class Shopping_cart extends Component {
-render() {
+
+function Shopping_cart({basketProps}) {
+console.log(basketProps);
+
 return (
 
 <div>
@@ -115,54 +118,6 @@ return (
                                     <span class="icon_close"></span>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="shoping__cart__item">
-                                    <img src="img/cart/cart-2.jpg" alt="" />
-                                    <h5>Fresh Garden Vegetable</h5>
-                                </td>
-                                <td class="shoping__cart__price">
-                                    $39.00
-                                </td>
-                                <td class="shoping__cart__quantity">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <span className="dec qtybtn"> - </span>
-                                                <input type="text" value="1" />
-                                            <span className="inc qtybtn"> + </span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="shoping__cart__total">
-                                    $39.99
-                                </td>
-                                <td class="shoping__cart__item__close">
-                                    <span class="icon_close"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="shoping__cart__item">
-                                    <img src="img/cart/cart-3.jpg" alt="" />
-                                    <h5>Organic Bananas</h5>
-                                </td>
-                                <td class="shoping__cart__price">
-                                    $69.00
-                                </td>
-                                <td class="shoping__cart__quantity">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <span className="dec qtybtn"> - </span>
-                                                <input type="text" value="1" />
-                                            <span className="inc qtybtn"> + </span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="shoping__cart__total">
-                                    $69.99
-                                </td>
-                                <td class="shoping__cart__item__close">
-                                    <span class="icon_close"></span>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -204,7 +159,10 @@ return (
 
 
         );
-    }
 }
 
-export default Shopping_cart;
+const mapStateToProps = state => ({
+    basketProps: state.basketState
+});
+
+export default connect( mapStateToProps )(Shopping_cart);

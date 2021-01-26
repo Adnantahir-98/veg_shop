@@ -4,7 +4,9 @@ import Sidebar from './Layouts/Sidebar';
 import Cards from './Layouts/productCards';
 import Banner from './Layouts/Banners';
 import Post from './Layouts/blogPost';
+import {Link} from "react-router-dom";
 import Carousel from 'react-responsive-carousel';
+
 import '../App.css';
 
 
@@ -83,6 +85,7 @@ return (
 
 <div className="App">
 
+
     <section className="hero">
         <div className="container">
             <div className="row">
@@ -138,7 +141,7 @@ return (
                                 <span className="ml-3">FRUIT FRESH</span>
                                 <h2 className="ml-3" style={{fontSize: "35px"}}>Vegetable <br />100% Organic</h2>
                                 <p className="ml-4">Free Pickup and Delivery Available</p>
-                                <a href="#" className="primary-btn">SHOP NOW</a>
+                                <Link to="/shop" className="primary-btn">SHOP NOW</Link>
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from './Components/Layouts/Header';
 import Home from './Components/Home';
 import Shop from './Components/Shop';
@@ -17,36 +18,40 @@ import Article from './Components/Layouts/Article';
 import Login from './Components/Layouts/Login';
 import Register from './Components/Layouts/register';
 import Logout from './Components/Layouts/logout';
+import store from './store';
 
 
 class App extends Component {
     
 render(){
-    console.log('App - Rendered');
+
     return (
+<Router>
+    <Provider store={store}>
         <div>
             <Header />
 
-            <Switch>
-            
-                <Route path="/" exact component={Home} />
-                <Route path="/shop" exact component={Shop} />
-                <Route path="/blog" exact component={Blog} />
-                <Route path="/blog_details" exact component={Blog_detail} />
-                <Route path="/shop_details" exact component={Shop_detail} />
-                <Route path="/shop_cart" exact component={Shopping_cart} />
-                <Route path="/checkout" exact component={Checkout} />
-                <Route path="/contact" exact component={Contact} />
-                <Route path="/products" exact component={Product_items} />
-                <Route path="/article" exact component={Article} />
-                <Route path="/login" exact component={Login} />
-                <Route path="/logout" exact component={Logout} />
-                <Route path="/register" exact component={Register} />
+                <Switch>
+                    
+                    <Route path="/" exact component={Home} />
+                    <Route path="/shop" exact component={Shop} />
+                    <Route exact path="/blog"  component={Blog} />
+                    <Route path="/blog_details" exact component={Blog_detail} />
+                    <Route path="/shop_details" exact component={Shop_detail} />
+                    <Route path="/shop_cart" exact component={Shopping_cart} />
+                    <Route path="/checkout" exact component={Checkout} />
+                    <Route path="/contact" exact component={Contact} />
+                    <Route path="/products" exact component={Product_items} />
+                    <Route path="/article" exact component={Article} />
+                    <Route path="/login" exact component={Login} />
+                    <Route path="/logout" exact component={Logout} />
+                    <Route path="/register" exact component={Register} />
 
-            </Switch>
-
+                </Switch>
             <Footer />
         </div>
+    </Provider>
+</Router>
         
         );
     }

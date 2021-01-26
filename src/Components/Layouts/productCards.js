@@ -2,15 +2,17 @@
 import React, { Component } from 'react';
 import { setState } from 'react';
 import {Link} from "react-router-dom";
+import { connect } from 'react-redux';
+import { addBasket } from '../../actions/addAction';
 
 
 class Cards extends Component{
     
     constructor(props){
         super(props);
-        
+        console.log(props);
         this.state = {
-            cart:[],
+
             products:[
                     {
                     id: "1",
@@ -40,7 +42,7 @@ class Cards extends Component{
                     id: "5",
                     name:"Abcd at Gmail Key",
                     price:"26$",
-                    img:"img/featured/feature-8.jpg"
+                    img:"img/featured/feature-5.jpg"
                     },
                     {
                     id: "6",
@@ -62,30 +64,22 @@ class Cards extends Component{
                     }
                 ]
             }     
+        }   
 
-        }   
-        addToCart = (product) => {
-            console.log('We are in Add to Cart');
-            this.setState({
-                cart :[ product]
-            })
-        }   
 render() {
 
   return (
         <div className="row featured__filter">
             {this.state.products.map((product, index) =>(
             <div className="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
-
                 <div className="featured__item">
-                
                     <div className="featured__item__pic set-bg" data-setbg="">
                         <img src={product.img} className="f_img" alt="feature-8" />
                         <ul className="featured__item__pic__hover">
                             <li><a href="#"><i className="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i className="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
                             <li>
-                            <a onClick={() => this.addToCart(product)} href="#"><i className="fa fa-shopping-cart"></i></a></li>
+                            <a onClick={() => this.props.addBasket(product.id) } ><i className="fa fa-shopping-cart"></i></a></li>
                         </ul>
                     </div> 
                     <div className="featured__item__text">
@@ -101,4 +95,4 @@ render() {
     }
 }
 
-export default Cards;
+export default connect(null, { addBasket })(Cards);

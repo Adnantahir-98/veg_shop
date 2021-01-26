@@ -42,8 +42,9 @@ return (
 <center>
     <div classNameName="container">
         <div classNameName="row">
-            <div className="col-md-4 p-4 rounded"  style={{background:"#eee"}}>
+            <div className="col-md-4 my-4 p-4 rounded"  style={{background:"#eee"}}>
                 <form onSubmit={this.submitForm} className="mr-auto">
+                    <div><h3> Log In </h3> <hr /> </div>
                     <div className="form-group">
                         <label className="float-left">Email</label>
                         <input type="email" className="form-control" name="email" placeholder="Enter email" value={this.state.email} onChange={this.onChange} />
