@@ -13,7 +13,6 @@ function Header(props) {
         }, [])
         return (    
 
-        <div>
             <div className="Home">
                 <div class="humberger__menu__overlay"></div>
                 <header class="header">
@@ -111,14 +110,20 @@ function Header(props) {
                                         <li>
                                             <Link to="#">
                                                 <i class="fa fa-heart"></i>
-                                                <span>1</span>
+                                                <span>0</span>
                                             </Link>
                                         </li>
-                                        <li>
+                                        <li>{
+                                            props.basketProps.basketNumbers ? 
                                             <Link to="/shop_cart">
                                                 <i class="fa fa-shopping-bag"></i>
                                                 <span>{ props.basketProps.basketNumbers }</span>
+                                            </Link> : 
+                                            <Link>
+                                                <i class="fa fa-shopping-bag"></i>
+                                                <span>0</span>
                                             </Link>
+                                        }
                                         </li>
                                     </ul>
                                     <div class="header__cart__price">item: 
@@ -134,7 +139,7 @@ function Header(props) {
                     </div>
                 </header>
             </div>
-        </div>
+
 
         );
 

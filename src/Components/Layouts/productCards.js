@@ -6,93 +6,145 @@ import { connect } from 'react-redux';
 import { addBasket } from '../../actions/addAction';
 
 
-class Cards extends Component{
-    
-    constructor(props){
-        super(props);
+const Cards = (props) => {
         console.log(props);
-        this.state = {
+        
+    return (
 
-            products:[
-                    {
-                    id: "1",
-                    name:"1st Featured Item",
-                    price:"30$",
-                    img:"img/featured/feature-1.jpg"
-                    },
-                    {
-                    id: "2",
-                    name:"Product Item 2nd",
-                    price:"28$",
-                    img:"img/featured/feature-2.jpg"
-                    },
-                    {
-                    id: "3",
-                    name:"Product Item 3rd",
-                    price:"17$",
-                    img:"img/featured/feature-3.jpg"
-                    },
-                    {
-                    id: "4",
-                    name:"Awesome Product Item",
-                    price:"19$",
-                    img:"img/featured/feature-4.jpg"
-                    },
-                    {
-                    id: "5",
-                    name:"Abcd at Gmail Key",
-                    price:"26$",
-                    img:"img/featured/feature-5.jpg"
-                    },
-                    {
-                    id: "6",
-                    name:"Crab Pool Security",
-                    price:"45$",
-                    img:"img/featured/feature-6.jpg"
-                    },
-                    {
-                    id: "7",
-                    name:"Crab Pool Security",
-                    price:"23$",
-                    img:"img/featured/feature-7.jpg"
-                    },
-                    {
-                    id: "8",
-                    name:"Crab Pool Security",
-                    price:"20$",
-                    img:"img/featured/feature-8.jpg"
-                    }
-                ]
-            }     
-        }   
-
-render() {
-
-  return (
         <div className="row featured__filter">
-            {this.state.products.map((product, index) =>(
-            <div className="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
-                <div className="featured__item">
-                    <div className="featured__item__pic set-bg" data-setbg="">
-                        <img src={product.img} className="f_img" alt="feature-8" />
-                        <ul className="featured__item__pic__hover">
-                            <li><a href="#"><i className="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
-                            <li>
-                            <a onClick={() => this.props.addBasket(product.id) } ><i className="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div> 
-                    <div className="featured__item__text">
-                        <h6><a href="#">{product.price}</a></h6>
-                        <h5>{product.name}</h5>
-                    </div>
-                </div>
-            </div>
-            ))}
+        <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+        <div class="featured__item">
+        <div class="featured__item__pic set-bg" data-setbg="">
+        <img src="img/featured/feature-1.jpg" alt="" />
+        <ul class="featured__item__pic__hover">
+        <li><a ><i class="fa fa-heart"></i></a></li>
+        <li><a ><i class="fa fa-retweet"></i></a></li>
+        <li><a onClick={() => props.addBasket('beef')}><i class="fa fa-shopping-cart"></i></a></li>
+        </ul>
+        </div>
+        <div class="featured__item__text">
+        <h6><a >Beef</a></h6>
+        <h5>$30.00</h5>
+        </div>
+        </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+        <div class="featured__item">
+        <div class="featured__item__pic set-bg" data-setbg="">
+        <img src="img/featured/feature-2.jpg" alt="" />
+        <ul class="featured__item__pic__hover">
+        <li><a ><i class="fa fa-heart"></i></a></li>
+        <li><a ><i class="fa fa-retweet"></i></a></li>
+        <li><a onClick={() => props.addBasket('banana')}><i class="fa fa-shopping-cart"></i></a></li>
+        </ul>
+        </div>
+        <div class="featured__item__text">
+        <h6><a >Banana</a></h6>
+        <h5>$18.00</h5>
+        </div>
+        </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+        <div class="featured__item">
+        <div class="featured__item__pic set-bg" data-setbg="">
+        <img src="img/featured/feature-3.jpg" alt="" />
+        <ul class="featured__item__pic__hover">
+        <li><a ><i class="fa fa-heart"></i></a></li>
+        <li><a ><i class="fa fa-retweet"></i></a></li>
+        <li><a onClick={() => props.addBasket('watermelons')}><i class="fa fa-shopping-cart"></i></a></li>
+        </ul>
+        </div>
+        <div class="featured__item__text">
+        <h6><a >2 Water Melons</a></h6>
+        <h5>$17.00</h5>
+        </div>
+        </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
+        <div class="featured__item">
+        <div class="featured__item__pic set-bg" data-setbg="">
+        <img src="img/featured/feature-4.jpg" alt="" />
+        <ul class="featured__item__pic__hover">
+        <li><a ><i class="fa fa-heart"></i></a></li>
+        <li><a ><i class="fa fa-retweet"></i></a></li>
+        <li><a onClick={() => props.addBasket('watermelon')}><i class="fa fa-shopping-cart"></i></a></li>
+        </ul>
+        </div>
+        <div class="featured__item__text">
+        <h6><a >Water Melon</a></h6>
+        <h5>$19.00</h5>
+        </div>
+        </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
+        <div class="featured__item">
+        <div class="featured__item__pic set-bg" data-setbg="">
+        <img src="img/featured/feature-5.jpg" alt="" />
+        <ul class="featured__item__pic__hover">
+        <li><a ><i class="fa fa-heart"></i></a></li>
+        <li><a ><i class="fa fa-retweet"></i></a></li>
+        <li><a onClick={() => props.addBasket('grapes')}><i class="fa fa-shopping-cart"></i></a></li>
+        </ul>
+        </div>
+        <div class="featured__item__text">
+        <h6><a >Grapes</a></h6>
+        <h5>$12.00</h5>
+        </div>
+        </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+        <div class="featured__item">
+        <div class="featured__item__pic set-bg" data-setbg="">
+        <img src="img/featured/feature-6.jpg" alt="" />
+        <ul class="featured__item__pic__hover">
+        <li><a ><i class="fa fa-heart"></i></a></li>
+        <li><a ><i class="fa fa-retweet"></i></a></li>
+        <li><a onClick={() => props.addBasket('burger')}><i class="fa fa-shopping-cart"></i></a></li>
+        </ul>
+        </div>
+        <div class="featured__item__text">
+        <h6><a >Burger</a></h6>
+        <h5>$11.00</h5>
+        </div>
+        </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
+        <div class="featured__item">
+        <div class="featured__item__pic set-bg" data-setbg="">
+        <img src="img/featured/feature-7.jpg" alt="" />
+        <ul class="featured__item__pic__hover">
+        <li><a ><i class="fa fa-heart"></i></a></li>
+        <li><a ><i class="fa fa-retweet"></i></a></li>
+        <li><a onClick={() => props.addBasket('mango')}><i class="fa fa-shopping-cart"></i></a></li>
+        </ul>
+        </div>
+        <div class="featured__item__text">
+        <h6><a >Mangos</a></h6>
+        <h5>$16.00</h5>
+        </div>
+        </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+        <div class="featured__item">
+        <div class="featured__item__pic set-bg" data-setbg="">
+        <img src="img/featured/feature-8.jpg" className="img-responsive" alt="" />
+        <ul class="featured__item__pic__hover">
+        <li><a ><i class="fa fa-heart"></i></a></li>
+        <li><a ><i class="fa fa-retweet"></i></a></li>
+        <li><a onClick={() => props.addBasket('apple')}><i class="fa fa-shopping-cart"></i></a></li>
+        </ul>
+        </div>
+        <div class="featured__item__text">
+        <h6><a >Apples</a></h6>
+        <h5>$20.00</h5>
+        </div>
+        </div>
+        </div>
+            
         </div>
 
          );
     }
-}
+
 
 export default connect(null, { addBasket })(Cards);

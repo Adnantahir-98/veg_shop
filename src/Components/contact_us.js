@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
+import Img from '../img/breadcrumb.jpg';
 
 class Contact extends Component {
   render() {
@@ -9,8 +10,8 @@ class Contact extends Component {
     
     <div classNameName="App">
 	
-            <section className="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
-            
+            <section className="" data-setbg="">
+            <img className="breadcrumb-section set-bg imag" src={Img} alt="" />
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12 text-center text-dark">

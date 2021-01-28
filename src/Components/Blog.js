@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
+import Img from '../img/breadcrumb.jpg';
+
 
 class Blog extends Component {
   render() {
@@ -82,7 +84,9 @@ class Blog extends Component {
             </div>
         </div>
     </section>
-    <section className="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+    {/* <section className="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg"></section> it was like that on the next line */}
+    <section className="" data-setbg="">
+        <img className="breadcrumb-section set-bg imag" src={Img} alt="" />
         <div className="container">
             <div className="row">
                 <div className="col-lg-12 text-center">

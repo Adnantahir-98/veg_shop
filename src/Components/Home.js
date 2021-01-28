@@ -5,6 +5,8 @@ import Cards from './Layouts/productCards';
 import Banner from './Layouts/Banners';
 import Post from './Layouts/blogPost';
 import {Link} from "react-router-dom";
+import { connect } from 'react-redux';
+import { addBasket } from '../actions/addAction';
 import Carousel from 'react-responsive-carousel';
 
 import '../App.css';
@@ -84,7 +86,6 @@ let blogPost = this.state.post.map(post => {
 return (
 
 <div className="App">
-
 
     <section className="hero">
         <div className="container">
