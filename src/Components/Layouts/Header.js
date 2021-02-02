@@ -10,7 +10,8 @@ function Header(props) {
 
         useEffect(() => {
             getNumbers();
-        }, [])
+        }, []);
+
         return (    
 
             <div className="Home">
@@ -113,17 +114,18 @@ function Header(props) {
                                                 <span>0</span>
                                             </Link>
                                         </li>
-                                        <li>{
-                                            props.basketProps.basketNumbers ? 
-                                            <Link to="/shop_cart">
-                                                <i class="fa fa-shopping-bag"></i>
-                                                <span>{ props.basketProps.basketNumbers }</span>
-                                            </Link> : 
-                                            <Link>
-                                                <i class="fa fa-shopping-bag"></i>
-                                                <span>0</span>
-                                            </Link>
-                                        }
+                                        <li>
+                                            {
+                                                props.basketProps.basketNumbers ? 
+                                                <Link to="/shop_cart">
+                                                    <i class="fa fa-shopping-bag"></i>
+                                                    <span>{ props.basketProps.basketNumbers }</span>
+                                                </Link> : 
+                                                <Link>
+                                                    <i class="fa fa-shopping-bag"></i>
+                                                    <span>0</span>
+                                                </Link>
+                                            }
                                         </li>
                                     </ul>
                                     <div class="header__cart__price">item: 

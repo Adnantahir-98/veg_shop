@@ -81,6 +81,7 @@ let blogPost = this.state.post.map(post => {
   )
 })
 
+
 // let Carousel = this.state.cat.map(cat => {<Carousel cat = {cat} />})
 
 return (
@@ -157,7 +158,7 @@ return (
             <div className="row">
                 <div className="categories__slider">
  
-            
+                             
 
                 </div>
             </div>
@@ -417,7 +418,7 @@ return (
             </div>
             <div className="row">
 
-              {blogPost}
+                {blogPost}
               
             </div>
         </div>

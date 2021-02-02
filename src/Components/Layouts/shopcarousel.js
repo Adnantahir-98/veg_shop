@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
+import { addBasket } from '../actions/addAction';
+
 
 class shopCarousel extends Component {
 constructor(props){
@@ -11,7 +13,8 @@ constructor(props){
         
     <div className="col-lg-4">
         <div className="product__discount__item">
-            <div className="product__discount__item__pic set-bg" data-setbg="img/product/discount/pd-1.jpg">
+            <div className="product__discount__item__pic set-bg" data-setbg="">
+            <img src="img/product/discount/pd-1.jpg" alt="" />
                 <div className="product__discount__percent">-20%</div>
                 <ul className="product__item__pic__hover">
                     <li>

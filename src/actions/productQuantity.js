@@ -1,6 +1,7 @@
 
 import { INCREASE_QUANTITY, DECREASE_QUANTITY, CLEAR_PRODUCT } from './types';
 
+
 export const productQuantity = (action, name) => {
 
     return (dispatch) => {
@@ -18,8 +19,7 @@ export const productQuantity = (action, name) => {
 export const clearProduct = (name) => {
     return (dispatch) => {
         console.log("Inside product Clear");
-        console.log("Product Name", name);
-        
+        console.log("Product Name", name);        
 
         dispatch({
             type: CLEAR_PRODUCT,

@@ -14,7 +14,7 @@ render() {
 return (
 
 
-<div className="App">
+<div className="App" style={{overflowX: "hidden",}}>
 
     <section class="hero hero-normal">
         <div class="container">

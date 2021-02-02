@@ -54,46 +54,47 @@ return(
     <Fragment key={index}>
         <tbody>
             <tr>
-                <td class="shoping__cart__item">
+                <td className="shoping__cart__item">
                     <img src={productImages(product)} alt="" style = {{width:"101px", height:"100px"}} />
                     <h5 className="pt-1">{product.name}</h5>
                 </td>
-                <td class="shoping__cart__price">
+                <td className="shoping__cart__price">
                     ${product.price}
                 </td>
-                <td class="shoping__cart__quantity">
-                    <div class="quantity">
-                    <div class="pro-">
-                        <input type="button" onClick={() => productQuantity('increase')} value=" - " />
-                        <input type="button" value={ product.numbers} max="10"/> 
-                        <input type="button" onClick={() => productQuantity('increase')} value=" + " />
+                <td className="shoping__cart__quantity">
+                    <div className="quantity">
+                    <div className="pro-qty">
+                        <i className="fa fa-minus py-2 my-1 mx-3 text-secondary" onClick={() => productQuantity('decrease', product.tagName)} style={{cursor:"pointer"}}> </i>
+                        <span max="10"> { product.numbers} </span>
+                        <i className="fa fa-plus py-2 my-1 mx-3 text-secondary" onClick={() => productQuantity('increase', product.tagName)} max="10" style={{cursor:"pointer"}}> </i>
                     </div>
                     </div>
                 </td>
-                <td class="shoping__cart__total">
-                    ${product.numbers * product.price }
+                <td className="shoping__cart__total">
+                    ${ product.numbers * product.price }
                 </td>
-                <td class="shoping__cart__item__close">
-                    <span onClick={() => clearProduct(product.tagName)} class="icon_close"></span>
+                <td className="shoping__cart__item__close">
+                    <span onClick={() => clearProduct(product.tagName)} className="icon_close"></span>
                 </td>
             </tr>
         </tbody>
 
     </Fragment>
 )
+
 })
 
 return (
 
     <div>
  
-        <section class="hero hero-normal">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="hero__categories">
-                            <div class="hero__categories__all">
-                                <i class="fa fa-bars"></i>
+        <section className="hero hero-normal">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-3">
+                        <div className="hero__categories">
+                            <div className="hero__categories__all">
+                                <i className="fa fa-bars"></i>
                                 <span>All departments</span>
                             </div>
                             <ul>
@@ -111,23 +112,23 @@ return (
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-9">
-                        <div class="hero__search">
-                            <div class="hero__search__form">
+                    <div className="col-lg-9">
+                        <div className="hero__search">
+                            <div className="hero__search__form">
                                 <form action="#">
-                                    <div class="hero__search__categories">
+                                    <div className="hero__search__categories">
                                         All Categories
-                                        <span class="arrow_carrot-down"></span>
+                                        <span className="arrow_carrot-down"></span>
                                     </div>
                                     <input type="text" placeholder="What do yo u need?" />
-                                    <button type="submit" class="site-btn">SEARCH</button>
+                                    <button type="submit" className="site-btn">SEARCH</button>
                                 </form>
                             </div>
-                            <div class="hero__search__phone">
-                                <div class="hero__search__phone__icon">
-                                    <i class="fa fa-phone"></i>
+                            <div className="hero__search__phone">
+                                <div className="hero__search__phone__icon">
+                                    <i className="fa fa-phone"></i>
                                 </div>
-                                <div class="hero__search__phone__text">
+                                <div className="hero__search__phone__text">
                                     <h5>+65 11.188.888</h5>
                                     <span>support 24/7 time</span>
                                 </div>
@@ -139,14 +140,14 @@ return (
         </section>
 
 
-        <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="breadcrumb__text">
+        <section className="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12 text-center">
+                        <div className="breadcrumb__text">
                             <h2 className="text-dark">Shopping Cart</h2>
-                            <div class="breadcrumb__option">
-                                <a href="index.html" className="text-dark">Home</a>
+                            <div className="breadcrumb__option">
+                                <Link to="/" className="text-dark">Home</Link>
                                 <span className="text-dark">Shopping Cart</span>
                             </div>
                         </div>
@@ -156,15 +157,15 @@ return (
         </section>
 
 
-        <section class="shoping-cart spad">
-            <div class="container">
-            <div class="row">
-            <div class="col-lg-12">
-                <div class="shoping__cart__table">
+        <section className="shoping-cart spad">
+            <div className="container">
+            <div className="row">
+            <div className="col-lg-12">
+                <div className="shoping__cart__table">
                     <table>
                         <thead>
                             <tr>
-                                <th class="shoping__product">Products</th>
+                                <th className="shoping__product">Products</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
@@ -178,35 +179,37 @@ return (
                 </div>
             </div>
         </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="shoping__cart__btns">
-                            <a href="#" class="primary-btn cart-btn CS">CONTINUE SHOPPING</a>
-                            <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
-                                Upadate Cart</a>
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="shoping__cart__btns">
+                            <Link to="/shop" className="primary-btn cart-btn CS">CONTINUE SHOPPING</Link>
+                            <Link to="#" className="primary-btn cart-btn cart-btn-right"><span className="icon_loading"></span>
+                                Upadate Cart</Link>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="shoping__continue">
-                            <div class="shoping__discount">
+                    <div className="col-lg-6">
+                        <div className="shoping__continue">
+                            <div className="shoping__discount">
                                 <h5>Discount Codes</h5>
                                 <form action="#">
                                     <input type="text" placeholder="Enter your coupon code" />
-                                    <button type="submit" class="site-btn">APPLY COUPON</button>
+                                    <button type="submit" className="site-btn">APPLY COUPON</button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="shoping__checkout">
-                            <h5>Cart Total</h5>
-                            <ul>
-                                <li>Subtotal <span>$454.98</span></li>
-                                <li>Total <span>$454.98</span></li>
-                            </ul>
-                            <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
-                        </div>
+                    
+                <div className="col-lg-6">
+                    <div className="shoping__checkout">
+                        <h5>Cart Total</h5>
+                        <ul>
+                            <li>Subtotal <span>$454.98</span></li>
+                            <li>Total <span>$454.98</span></li>
+                        </ul>
+                        <Link to="/checkout" className="primary-btn">PROCEED TO CHECKOUT</Link>
                     </div>
+                </div>
+
                 </div>
             </div>
         </section>
