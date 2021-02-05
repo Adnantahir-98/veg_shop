@@ -3473,6 +3473,60 @@ ol {
 	width: 100%;
 }
 
+.homecarousel{
+	position: relative;
+	display: flex;
+}
+/* .prev{
+	position: relative;
+	left: 0;
+	top:20%;
+	height: 60px;
+	padding: 4px;
+	background: #fff;
+	border: 1px solid #eee;
+	
+}
+.prev:hover{
+
+	font-size: 18px;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 4px;
+}
+.prev i{
+	position: relative;
+	top: 25%;
+	color: #bbb;
+}
+
+.next{
+
+	height: 60px;
+	padding: 4px;
+	background: #fff;
+	border: 1px solid #eee;
+ 
+}
+.next:hover{
+	font-size: 18px;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 4px;
+}
+.next i{
+	
+	top: 25%;
+	color: #bbb;
+}
 
 
+@media only screen and (max-width: 479px) {
+	.next{
+		overflow: hidden;
+	}
+	.next{
+		overflow: hidden;
+	}
+} */
 

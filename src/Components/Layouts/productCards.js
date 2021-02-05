@@ -8,8 +8,9 @@ import { addBasket } from '../../actions/addAction';
 const Cards = (props) => {
 console.log(props);
 
-return (
 
+return (
+    
 <div className="row featured__filter">
     <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
         <div class="featured__item">
